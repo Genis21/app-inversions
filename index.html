@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>App d'ajuda per a fer inversions</title>
+        
+        <style>
+            /*CSS de la barra superior */
+            .barra-superior {
+              font-family: system-ui, -apple-system, sans-serif;
+              display: flex;
+              justify-content: space-between; /* Separa els 3 blocs (esquerra, centre, dreta) */
+              align-items: center; /* Centra tots els elements verticalment */
+              padding: 12px 24px; /* L'espai intern (dalt/baix i esquerra/dreta) */
+              border-bottom: 1px solid #e5e7eb; /* Una línia fina a sota per separar-la del títol */
+              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+              margin-bottom: 30px; /* Espai per a que el títol de sota no quedi enganxat */
+              
+              border-radius: 12px;
+              background-color: #111621;
+            }
+            
+            /* BLOC ESQUERRA: Logo i nom */
+            .bloc-esquerra {
+              display: flex;
+              align-items: center;
+              gap: 10px; /* Espai entre el cercle del logo i el text */
+            }
+            
+            .logo {
+                width: 32px;
+                height: 32px;
+                /* Cal descarregar imatge en format png del logo */
+                background-image: url("logo.png");
+                background-size: cover;      /* La imatge ocupa tot el quadrat */
+                background-position: center; /* La centra */
+                background-repeat: no-repeat;
+                border-radius: 8px;
+            }
+            
+            .nom-app {
+              font-weight: 700;
+              font-size: 18px;
+              color: #FFFFFF;
+            }
+            
+            /* BLOC CENTRE: Botons de navegació */
+            .bloc-centre {
+              display: flex;
+              gap: 20px; /* Espai entre els botons del menú */
+            }
+            
+            .enllac-nav {
+              text-decoration: none;
+              color: #FFFFFF; /* Gris fosc per als botons secundaris */
+              font-weight: 300;
+              font-size: 15px;
+              padding: 6px 12px;
+              border-radius: 6px;
+              transition: all 0.2s ease;
+            }
+            
+            .enllac-nav:hover {
+              background-color: #f3f4f6; /* Efecte en passar el ratolí per sobre */
+              color: #000000;
+            }
+            
+            .enllac-nav.actiu {
+              font-weight: 700;
+              color: #63C27C; /* Color verd per destacar la secció on som */
+            }
+            
+            /* BLOC DRETA: Cercador, notificacions i usuari */
+            .bloc-dreta {
+              display: flex;
+              align-items: center;
+              gap: 15px; /* Espai entre cercador, campana i avatar */
+            }
+            
+            .cercador input {
+              padding: 6px 12px;
+              border: 1px solid #d1d5db;
+              border-radius: 6px;
+              font-size: 14px;
+              outline: none;
+            }
+            
+            .cercador input:focus {
+              border-color: #00875a;
+            }
+            
+            .boto-icona {
+              background: none;
+              border: none;
+              font-size: 18px;
+              cursor: pointer;
+              padding: 4px;
+              border-radius: 50%;
+            }
+            
+            .boto-icona:hover {
+              background-color: #f3f4f6;
+            }
+            
+            .avatar-usuari {
+              width: 36px;
+              height: 36px;
+              background-color: #4b5563;
+              color: white;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: bold;
+              font-size: 14px;
+            }
+            
+            
+            /*CSS del titol de la pagina inicial*/
+            .titol-inici {
+              font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+              font-size: 28px;
+              line-height: 1.3;
+              padding-left: 64px;
+            }
+            
+            .text-negre {
+              color: #000000;
+              font-weight: 700;
+              display: block;
+            }
+            
+            .text-verd {
+              color: #00875a;
+              font-weight: 500;
+              display: block; /* FORÇA que el verd vagi a la línia de sota */
+              margin-top: 2px; /* Controla l'espaiat vertical exacte entre les dues línies */
+            }
+            
+            
+            /* CSS de l'apartat sobre nosaltres */
+            .titol-sobre-nosaltres {
+                margin-top: 80px;
+                font-weight: 100;
+                padding-left: 64px;
+                font-weight: bold;
+            }
+            
+            .sobre-nosaltres {
+                padding-left: 64px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header class="barra-superior">
+          <div class="bloc-esquerra">
+            <div class="logo"></div> <span class="nom-app">Nom de la App</span>
+          </div>
+        
+          <!--Barra superior amb apartats-->
+          <nav class="bloc-centre">
+            <a href="#" class="enllac-nav actiu">Inici</a>
+            <a href="#" class="enllac-nav">Portafoli</a>
+            <a href="#" class="enllac-nav">IA</a>
+            <a href="#" class="enllac-nav">Programa d'ajuda</a>
+            <a href="#" class="enllac-nav">Broker</a>
+            <!--Falta completar amb totes les funcions de la app-->
+          </nav>
+        
+          <div class="bloc-dreta">
+            <div class="cercador">
+              <input type="text" placeholder="Buscar...">
+            </div>
+            <button class="boto-icona" aria-label="Notificacions">🔔</button>
+            <div class="avatar-usuari">U</div>
+          </div>
+        </header>
+        
+        
+        <h1 class="titol-inici">
+            <span class="text-negre">Pren decisions</span>
+            <span class="text-verd">intel·ligents.</span>
+        </h1>
+        
+        
+        <h2 class="titol-sobre-nosaltres">Sobre nosaltres</h2>
+        <p class="sobre-nosaltres">Nosaltres som una empresa que s'ha fundat aquest 2026 que el que vol és ajudar tant a inversors professionals com a nous inversors sense experiencia</p>
+        
+    </body>
+</html>
